@@ -39,7 +39,7 @@
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="backchannel.php">BACKCHANNEL</a>
+                <a class="p-2 link-secondary" href="index.php">HOME</a>
                 <a class="p-2 link-secondary" href="#">BUSINESS</a>
                 <a class="p-2 link-secondary" href="#">CULTURE</a>
                 <a class="p-2 link-secondary" href="#">GEAR</a>
@@ -52,7 +52,7 @@
             <div class="col-md-6 px-0">
                 <?php
                 include('config.php');
-                $sql = "select * from posts where id=1;";
+                $sql = "select * from posts where id=10;";
                 $result = mysqli_query($conn, $sql);
                 $res = mysqli_fetch_array($result);
                 echo "<h1 class=\"display-4 fst-italic\">" . $res['Title'] . "</h1>";
@@ -69,7 +69,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <?php
                         include('config.php');
-                        $sql = "select * from posts where id=2;";
+                        $sql = "select * from posts where id=8;";
                         $result = mysqli_query($conn, $sql);
                         $res = mysqli_fetch_array($result);
                         echo "<strong class=\"d-inline-block mb-2 text-primary\">" . $res['Category'] . "</strong>";
@@ -86,7 +86,7 @@
                             <title>Placeholder</title>
                             <?php
                             include('config.php');
-                            $sql = "select Url from posts where id=2;";
+                            $sql = "select Url from posts where id=8;";
                             $result = mysqli_query($conn, $sql);
                             $res = mysqli_fetch_array($result);
                             echo "<image href="."\"".$res['Url']."\""."/>";
@@ -103,7 +103,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <?php
                         include('config.php');
-                        $sql = "select * from posts where id=3;";
+                        $sql = "select * from posts where id=7;";
                         $result = mysqli_query($conn, $sql);
                         $res = mysqli_fetch_array($result);
                         echo "<strong class=\"d-inline-block mb-2 text-primary\">" . $res['Category'] . "</strong>";
@@ -120,7 +120,7 @@
                             <title>Placeholder</title>
                             <?php
                             include('config.php');
-                            $sql = "select Url from posts where id=3;";
+                            $sql = "select Url from posts where id=7;";
                             $result = mysqli_query($conn, $sql);
                             $res = mysqli_fetch_array($result);
                             echo "<image href="."\"".$res['Url']."\""."/>";
@@ -138,7 +138,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <?php
                         include('config.php');
-                        $sql = "select * from posts where id=2;";
+                        $sql = "select * from posts where id=9;";
                         $result = mysqli_query($conn, $sql);
                         $res = mysqli_fetch_array($result);
                         echo "<strong class=\"d-inline-block mb-2 text-primary\">" . $res['Category'] . "</strong>";
