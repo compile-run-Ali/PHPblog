@@ -39,7 +39,7 @@
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">BACKCHANNEL</a>
+                <a class="p-2 link-secondary" href="backchannel.php">BACKCHANNEL</a>
                 <a class="p-2 link-secondary" href="#">BUSINESS</a>
                 <a class="p-2 link-secondary" href="#">CULTURE</a>
                 <a class="p-2 link-secondary" href="#">GEAR</a>
@@ -51,14 +51,14 @@
         <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
             <div class="col-md-6 px-0">
                 <?php
-        include('config.php');
-        $sql = "select * from posts where id=1;";
-        $result = mysqli_query($conn, $sql);
-        $res = mysqli_fetch_array($result);
-        echo "<h1 class=\"display-4 fst-italic\">" . $res['Title'] . "</h1>";
-        echo "<p class=\"lead my-3\">" . $res['Content'] . "</p>";
-        echo "<p class=\"lead mb-0\"><a href=\"#\" class=\"text-white fw-bold\">" . $res['Author'] . "</a></p>";
-        ?>
+                include('config.php');
+                $sql = "select * from posts where id=1;";
+                $result = mysqli_query($conn, $sql);
+                $res = mysqli_fetch_array($result);
+                echo "<h1 class=\"display-4 fst-italic\">" . $res['Title'] . "</h1>";
+                echo "<p class=\"lead my-3\">" . $res['Content'] . "</p>";
+                echo "<p class=\"lead mb-0\"><a href=\"#\" class=\"text-white fw-bold\">" . $res['Author'] . "</a></p>";
+                ?>
             </div>
         </div>
 
@@ -68,24 +68,29 @@
                     class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <?php
-            include('config.php');
-            $sql = "select * from posts where id=2;";
-            $result = mysqli_query($conn, $sql);
-            $res = mysqli_fetch_array($result);
-            echo "<strong class=\"d-inline-block mb-2 text-primary\">".$res['Category']."</strong>";
-            echo "<h3 class=\"mb-0\">".$res['Title']."</h3>";
-            echo "<div class=\"mb-1 text-muted\">".$res['Date']."</div>";
-            echo "<p class=\"card-text mb-auto\">".$res['Content']."</p>";
-            echo "<a href=\"#\" class=\"stretched-link\">".$res['Author']."</a>";
-            ?>
+                        include('config.php');
+                        $sql = "select * from posts where id=2;";
+                        $result = mysqli_query($conn, $sql);
+                        $res = mysqli_fetch_array($result);
+                        echo "<strong class=\"d-inline-block mb-2 text-primary\">" . $res['Category'] . "</strong>";
+                        echo "<h3 class=\"mb-0\">" . $res['Title'] . "</h3>";
+                        echo "<div class=\"mb-1 text-muted\">" . $res['Date'] . "</div>";
+                        echo "<p class=\"card-text mb-auto\">" . $res['Content'] . "</p>";
+                        echo "<a href=\"#\" class=\"stretched-link\">" . $res['Author'] . "</a>";
+                        ?>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                             role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                             focusable="false">
                             <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
+                            <?php
+                            include('config.php');
+                            $sql = "select Url from posts where id=2;";
+                            $result = mysqli_query($conn, $sql);
+                            $res = mysqli_fetch_array($result);
+                            echo "<image href="."\"".$res['Url']."\""."/>";
+                            ?>  
                         </svg>
 
                     </div>
@@ -97,24 +102,29 @@
                     class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <?php
-            include('config.php');
-            $sql = "select * from posts where id=3;";
-            $result = mysqli_query($conn, $sql);
-            $res = mysqli_fetch_array($result);
-            echo "<strong class=\"d-inline-block mb-2 text-primary\">".$res['Category']."</strong>";
-            echo "<h3 class=\"mb-0\">".$res['Title']."</h3>";
-            echo "<div class=\"mb-1 text-muted\">".$res['Date']."</div>";
-            echo "<p class=\"card-text mb-auto\">".$res['Content']."</p>";
-            echo "<a href=\"#\" class=\"stretched-link\">".$res['Author']."</a>";
-        ?>
+                        include('config.php');
+                        $sql = "select * from posts where id=3;";
+                        $result = mysqli_query($conn, $sql);
+                        $res = mysqli_fetch_array($result);
+                        echo "<strong class=\"d-inline-block mb-2 text-primary\">" . $res['Category'] . "</strong>";
+                        echo "<h3 class=\"mb-0\">" . $res['Title'] . "</h3>";
+                        echo "<div class=\"mb-1 text-muted\">" . $res['Date'] . "</div>";
+                        echo "<p class=\"card-text mb-auto\">" . $res['Content'] . "</p>";
+                        echo "<a href=\"#\" class=\"stretched-link\">" . $res['Author'] . "</a>";
+                        ?>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                             role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                             focusable="false">
                             <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
+                            <?php
+                            include('config.php');
+                            $sql = "select Url from posts where id=3;";
+                            $result = mysqli_query($conn, $sql);
+                            $res = mysqli_fetch_array($result);
+                            echo "<image href="."\"".$res['Url']."\""."/>";
+                            ?>
                         </svg>
 
                     </div>
@@ -129,60 +139,72 @@
                 </h3>
 
                 <article class="blog-post">
-                    <h2 class="blog-post-title">Business</h2>
-                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Will Knight</a></p>
-
-                    <p>As Russia Plots Its Next Move, an AI listens to the Chatter</p>
+                    <?php
+                    include('config.php');
+                    $sql = "select * from posts where id=5;";
+                    $result = mysqli_query($conn, $sql);
+                    $res = mysqli_fetch_array($result);
+                    echo "<h2 class=\"blog-post-title\">".$res['Category']."</h2>";
+                    echo "<p class=\"blog-post-meta\">".$res['Date']. " by ". "<a href=\"#\">".$res['Author']."</a></p>";
+                    echo "<p>".$res['Title']."</p>";
+                    echo "<p>".$res['Content']."</p>";
+                    ?>
                     <hr>
-                    <p>With vast amounts of data becoming available to intelligence analysts, new tools will help the
-                        sift and interpret it all-but they will introduce new risks too.</p>
-                    <h2>Reef or Madness?</h2>
+                    <?php
+                    include('config.php');
+                    $sql = "select * from posts where id=6;";
+                    $result = mysqli_query($conn, $sql);
+                    $res = mysqli_fetch_array($result);
+                    echo "<h2 class=\"blog-post-title\">".$res['Category']."</h2>";
+                    echo "<p class=\"blog-post-meta\">".$res['Date']. " by ". "<a href=\"#\">".$res['Author']."</a></p>";
+                    echo "<p>".$res['Title']."</p>";
+                    echo "<p>".$res['Content']."</p>";
+                    ?>
                     <blockquote class="blockquote">
-                        <p>A Million little pieces: The Race to Rebuild the World's Reefs.</p>
-                    </blockquote>
-                    <p>Nearly half of these ocean ecosystems have been wiped out since 1950. One man is on a mission to
-                        reverse that—by speed-growing coral in hyperefficient nurseries.</p>
-                    <h3>Most Recent</h3>
-                    <ul>
-                        <li>After-loss Tech Wants to Ease the Logistics of Death</li>
-                        <li>The Best Hiking Shirts and Base Layers for Outdoor Fun</li>
-                        <li>The Newton-Rider Bike Helmet Folds to Fit in your Bag</li>
-                    </ul>
-                    <p>Older</p>
-                    <ol>
-                        <li>Netflix's SpaceX Documentary Doesn't tell the Whole Story</li>
-                        <li>The <b>Insta 360</b> One RS Camera is the Best of Both Worlds</li>
-                    </ol>
-                    <p>Trending Stories</p>
-                    <dl>
-                        <dt>As Russia Plots Its Next Move, an AI Listens to the Chatter</dt>
-                        <dd>With vast amounts of data becoming available to intelligence analysts, new tools will help
-                            them sift and interpret it all—but they will introduce new risks, too.</dd>
-                        <dt>6 Free Ways to Practice Sign Language Online</dt>
-                        <dd>You don’t need to spend any money to start learning American Sign Language (ASL) with these
-                            resources.</dd>
-                        <dt>I Finally Found a Work Computer Setup That's Practically Perfect</dt>
-                        <dd>Hear me out: A primary ultrawide monitor paired with a second screen in portrait orientation
-                            levels up your work and play.</dd>
-                    </dl>
-                    <h2>Power Move</h2>
-                    <p>The administration will use the Defense Production Act to encourage mining raw materials for
-                        batteries. But a sustainable fix will take years.</p>
-                    <h3>Biden Plays a National Security Card to Fix the Lithium Shortage </h3>
-                    <p>THE FIRST QUESTION to ask about the lithium shortage is whether there is a shortage at all.</p>
+                        <h3>Most Recent</h3>
+                        <ul>
+                            <li>After-loss Tech Wants to Ease the Logistics of Death</li>
+                            <li>The Best Hiking Shirts and Base Layers for Outdoor Fun</li>
+                            <li>The Newton-Rider Bike Helmet Folds to Fit in your Bag</li>
+                        </ul>
+                        <p>Older</p>
+                        <ol>
+                            <li>Netflix's SpaceX Documentary Doesn't tell the Whole Story</li>
+                            <li>The <b>Insta 360</b> One RS Camera is the Best of Both Worlds</li>
+                        </ol>
+                        <p>Trending Stories</p>
+                        <dl>
+                            <dt>As Russia Plots Its Next Move, an AI Listens to the Chatter</dt>
+                            <dd>With vast amounts of data becoming available to intelligence analysts, new tools will
+                                help
+                                them sift and interpret it all—but they will introduce new risks, too.</dd>
+                            <dt>6 Free Ways to Practice Sign Language Online</dt>
+                            <dd>You don’t need to spend any money to start learning American Sign Language (ASL) with
+                                these
+                                resources.</dd>
+                            <dt>I Finally Found a Work Computer Setup That's Practically Perfect</dt>
+                            <dd>Hear me out: A primary ultrawide monitor paired with a second screen in portrait
+                                orientation
+                                levels up your work and play.</dd>
+                        </dl>
+                        <h2>Power Move</h2>
+                        <p>The administration will use the Defense Production Act to encourage mining raw materials for
+                            batteries. But a sustainable fix will take years.</p>
+                        <h3>Biden Plays a National Security Card to Fix the Lithium Shortage </h3>
+                        <p>THE FIRST QUESTION to ask about the lithium shortage is whether there is a shortage at all.
+                        </p>
                 </article>
 
                 <article class="blog-post">
-                    <h2 class="blog-post-title">The Best Bike Accessories</h2>
-                    <p class="blog-post-meta">December 23, 2020 by <a href="#">Matt Jancer</a></p>
-
-                    <p>BICYCLES ARE AMAZING machines. They delight us with their speed and ability to take us wherever
-                        we want, and they do it while giving us a good workout. All this in a machine with a very low
-                        environmental footprint that you can store in your apartment.</p>
-                    <blockquote>
-                        <p><i>Special offer for Gear readers: Get a <strong>1-year subscription to WIRED for $5 ($25
-                                    off).</strong> This includes unlimited access to WIRED.com and our print magazine
-                                (if you'd like). Subscriptions help fund the work we do every day.</i></p>
+                    <?php
+                    include('config.php');
+                    $sql = "select * from articles where id=1;";
+                    $result = mysqli_query($conn, $sql);
+                    $res = mysqli_fetch_array($result);
+                    echo "<h2 class=\"blog-post-title\">".$res['Title']."</h2>";
+                    echo "<p class=\"blog-post-meta\">".$res['Date']. " by ". "<a href=\"#\">".$res['Author']."</a></p>";
+                    echo "<p>".$res['Content']."</p>";
+                    ?>
                     </blockquote>
                     <p>These picks we've assembled below were tested with old-school pedal bikes in mind, but nearly all
                         of them will work for both electric bikes and non-electric (acoustic) bikes. Take a look at our
@@ -228,36 +250,15 @@
                     <p>If you ride enough, you're going to get caught in a storm from time to time, but you don't have
                         to ride soaked and miserable. Take a look at our guide to the Best Rain Jackets too.</p>
                 </article>
-
-                <article class="blog-post">
-                    <h2 class="blog-post-title">Review: OnePlus 10 Pro</h2>
-                    <p class="blog-post-meta">December 14, 2020 by <a href="#">Julian Chokkattu</a></p>
-
-                    <p>IF YOU MADE me choose from the current crop of flagship Android smartphones, the new OnePlus 10
-                        Pro wouldn't be my first or second choice. It's not my last either. At $899, it sits in an
-                        awkward spot of being pretty good for the money, but not quite as great as some of its peers.
-                    </p>
-                    <ul>
-                        <li>Bright, 120-Hz screen. OK battery life with fast wired and wireless charging. Great
-                            performance. Solid camera system for photos and video. Customizable, simple software
-                            experience. Will get three OS upgrades and four years of security updates. Nice haptics.
-                        </li>
-                        <li>Camera system isn't as good as similarly priced competitors, especially in low light. No
-                            millimeter-wave 5G, no 5G support on AT&T. No IP rating on unlocked model.</li>
-                        <li>Rating: 7/10</li>
-                    </ul>
-                    <p>I've only run into two bugs on my OnePlus 10 Pro review unit. Sometimes, the camera app freezes
-                        and it requires a full phone restart to get things back to normal. Also, I wasn't able to make
-                        contactless payments twice … which also required a restart for it to work again. OnePlus says it
-                        hasn't seen these problems and that the team is looking into it.
-
-                        Outside of that, I've had a pretty enjoyable time with the 10 Pro. I'm nitpicky about the
-                        camera, but you have to be when that's the area of biggest focus and improvement on smartphones
-                        nowadays. The 10 Pro also has a pretty reliable fingerprint sensor; I love the haptic vibrations
-                        that rumble out of it; and I've grown to like the physical mute switch on the side (like on
-                        iPhones).</p>
-                </article>
-
+                <?php
+                    include('config.php');
+                    $sql = "select * from articles where id=2;";
+                    $result = mysqli_query($conn, $sql);
+                    $res = mysqli_fetch_array($result);
+                    echo "<h2 class=\"blog-post-title\">".$res['Title']."</h2>";
+                    echo "<p class=\"blog-post-meta\">".$res['Date']. " by ". "<a href=\"#\">".$res['Author']."</a></p>";
+                    echo "<p>".$res['Content']."</p>";
+                    ?>
                 <nav class="blog-pagination" aria-label="Pagination">
                     <a class="btn btn-outline-primary" href="#">Older</a>
                     <a class="btn btn-outline-secondary disabled">Newer</a>
